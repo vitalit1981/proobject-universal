@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PROobject – AI-powered construction workflow for blockchain grants</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a192f;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: #e2e8f0;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(17, 34, 64, 0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 2rem;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #ffffff;
+      margin-bottom: 0.3rem;
+    }
+
+    h1 span {
+      color: #facc15;
+    }
+
+    .subhead {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      margin-bottom: 2rem;
+      border-left: 4px solid #facc15;
+      padding-left: 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #facc15;
+      margin: 2.5rem 0 1rem 0;
+      border-bottom: 2px solid rgba(250, 204, 21, 0.2);
+      padding-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      color: #ffffff;
+      margin: 1.5rem 0 0.5rem 0;
+    }
+
+    p, li {
+      color: #cbd5e1;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "▹ ";
+      color: #facc15;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.2s;
+    }
+
+    .card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(250, 204, 21, 0.3);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #facc15;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(250, 204, 21, 0.15);
+      color: #facc15;
+      padding: 0.2rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #facc15;
+      color: #0a192f;
+      font-weight: 700;
+      padding: 0.8rem 2.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: 0.2s;
+      margin-top: 0.5rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background: #e6b800;
+      transform: scale(1.02);
+    }
+
+    .footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    .footer a {
+      color: #94a3b8;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: 0.2s;
+    }
+
+    .footer a:hover {
+      color: #facc15;
+      border-bottom-color: #facc15;
+    }
+
+    .chain-badge {
+      display: inline-block;
+      background: rgba(72, 187, 244, 0.15);
+      color: #48bbf4;
+      padding: 0.3rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+      margin-right: 0.5rem;
+    }
+
+    .chain-badge.orange {
+      background: rgba(250, 204, 21, 0.15);
+      color: #facc15;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem 1rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .subhead {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- УНИВЕРСАЛЬНЫЕ БЕЙДЖИ -->
+  <div>
+    <span class="chain-badge">⚡ Exploring NEAR</span>
+    <span class="chain-badge orange">⚡ Exploring Algorand</span>
+    <span class="chain-badge">⚡ Open to other ecosystems</span>
+  </div>
+
+  <!-- HERO -->
+  <h1>PRO<span>object</span></h1>
+  <div class="subhead">
+    AI‑powered construction workflow — from a messy request to a clear deal foundation
+  </div>
+
+  <p style="font-size:1.15rem;">
+    We help contractors and customers build a shared technical and economic basis for construction projects.
+    Our platform turns photos, drawings, BOQs, defect lists and text requests into an <strong>object passport</strong>,
+    identifies missing data, highlights risks, and generates a preliminary scope, crew, schedule and price range.
+  </p>
+
+  <a href="#contact" class="cta-button">Get in touch →</a>
+
+  <!-- ПРОБЛЕМА -->
+  <h2>Problem</h2>
+  <p>
+    Construction work often starts with incomplete and fragmented information. Contractors waste hours deciphering
+    vague requests, while customers don't know what is really included in the price. Lead marketplaces provide
+    contacts, but they do not resolve the uncertainty that follows: missing data, site conditions, risk allocation,
+    and price justification. This leads to disputes, delays, cost overruns, and failed deals.
+  </p>
+
+  <!-- РЕШЕНИЕ -->
+  <h2>Solution</h2>
+  <p>
+    <strong>PROobject</strong> is an AI‑assisted workflow platform that structures incoming requests into a
+    decision-ready package. It does not replace professional engineers, but it narrows the initial guesswork and
+    creates a common language for both sides.
+  </p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="badge">Input</div>
+      <p>Text, photos, drawings, BOQs, defect reports, spreadsheets</p>
+    </div>
+    <div class="card">
+      <div class="badge">Output</div>
+      <p>Object passport, clarification questions, risk cues, preliminary estimate, proposal draft</p>
+    </div>
+  </div>
+
+  <!-- КАК ЭТО РАБОТАЕТ -->
+  <h2>Workflow</h2>
+  <ul>
+    <li>User role and purpose defined</li>
+    <li>Source materials uploaded</li>
+    <li>Object passport generated</li>
+    <li>Missing data and site factors detected</li>
+    <li>Clarification questions prepared</li>
+    <li>Updated scope, team, schedule, risks and price range</li>
+    <li>Proposal, contract-support document or next workflow artifact</li>
+  </ul>
+
+  <!-- РЫНОК -->
+  <h2>Market opportunity</h2>
+  <p>
+    The global construction software market is projected to reach <strong>$18.4 billion</strong> by 2028.
+    In Russia, ConTech is estimated at <strong>500 billion RUB</strong>, with our target segment
+    (small to mid‑size contractors and engineering firms) accounting for roughly <strong>50 billion RUB</strong>.
+  </p>
+
+  <!-- ТРАКШН -->
+  <h2>Traction &amp; current status</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3>✅ Functional MVP</h3>
+      <p>Local web prototype with core workflow: role selection, source input, object passport, risk detection, and output generation.</p>
+    </div>
+    <div class="card">
+      <h3>🌐 Public page</h3>
+      <p><a href="https://pro-object-workflow.vercel.app/" target="_blank" style="color:#facc15;">pro-object-workflow.vercel.app</a></p>
+    </div>
+    <div class="card">
+      <h3>📄 Grant materials</h3>
+      <p>Prepared one-pager, pitch deck outline, English demo video, and disclosure protocol.</p>
+    </div>
+    <div class="card">
+      <h3>🤝 Pilots in progress</h3>
+      <p>Active discussions with SaaS Factory and Foundamental; exploring pilot opportunities with network organisations.</p>
+    </div>
+  </div>
+
+  <!-- БИЗНЕС-МОДЕЛЬ -->
+  <h2>Business model</h2>
+  <ul>
+    <li><strong>Subscription</strong> – tiered plans for masters, small teams, and B2B clients</li>
+    <li><strong>Transaction fee</strong> – for structured matching and protected deal workflows</li>
+    <li><strong>Expert services</strong> – advanced analysis, document review, and dispute support</li>
+  </ul>
+
+  <!-- КОНКУРЕНТНОЕ ПРЕИМУЩЕСТВО -->
+  <h2>Why us</h2>
+  <ul>
+    <li><strong>20 years of real engineering practice</strong> behind the logic – not just generic AI</li>
+    <li><strong>Industry memory</strong> – rules built on actual projects, not theoretical assumptions</li>
+    <li><strong>End‑to‑end support</strong> – from request analysis to proposal, contract, and project tracking</li>
+    <li><strong>Privacy‑by‑design</strong> – confidential documents remain off‑chain, blockchain used only for verification</li>
+  </ul>
+
+  <!-- БЛОКЧЕЙН-СЛОЙ (УНИВЕРСАЛЬНЫЙ) -->
+  <h2>Blockchain layer (ecosystem-agnostic)</h2>
+  <p>
+    We are building a public‑safe proof module that demonstrates how a construction document fingerprint
+    and milestone status can be recorded on a public testnet. We are actively exploring <strong>NEAR</strong>
+    and <strong>Algorand</strong> as potential ecosystems, and we remain open to other networks that offer
+    strong grant programs and technical fit for our use case.
+  </p>
+  <ul>
+    <li><strong>Document fingerprinting</strong> – cryptographically verify that a document existed at a specific time</li>
+    <li><strong>Milestone verification</strong> – record status changes and approvals in a tamper‑evident way</li>
+    <li><strong>No real funds or tokens</strong> – all data is synthetic and no escrow is claimed in the MVP</li>
+    <li><strong>Open source</strong> – the proof module will be published as open source, aligning with grant requirements</li>
+  </ul>
+
+  <!-- ПОЧЕМУ МЫ ПОДХОДИМ ДЛЯ ГРАНТОВ -->
+  <h2>Why we are a strong grant candidate</h2>
+  <ul>
+    <li><strong>Real problem, real solution</strong> – we address a $18B+ global market with a working MVP</li>
+    <li><strong>Proven team</strong> – 20 years of domain expertise, not just theoretical knowledge</li>
+    <li><strong>Open source commitment</strong> – our blockchain proof module will be publicly available</li>
+    <li><strong>Ecosystem flexibility</strong> – we are ready to build on NEAR, Algorand, or any chain with strong grant support</li>
+    <li><strong>Measurable outcomes</strong> – we already have pilot discussions and a clear roadmap</li>
+  </ul>
+
+  <!-- КОМАНДА -->
+  <h2>Team</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Vitaliy Tolkov</h3>
+      <p>Founder. 20 years in industrial heat‑power engineering, networks, design, estimates, installation, as‑built documentation, and handover. Combines technical education with hands‑on contracting and project management.</p>
+    </div>
+    <div class="card">
+      <h3>Nikita Tolkov</h3>
+      <p>Developer. Holds a vocational qualification in programming and is continuing his education in artificial intelligence and technology. Responsible for product implementation, structured data workflows, and test automation.</p>
+    </div>
+  </div>
+
+  <!-- ДОРОЖНАЯ КАРТА -->
+  <h2>Roadmap</h2>
+  <ul>
+    <li><strong>Q3–Q4 2026</strong> – Complete MVP refinements, launch first pilots with 3–5 contractors</li>
+    <li><strong>Q1 2027</strong> – Integrate blockchain proof module on testnet (NEAR / Algorand / other), publish open‑source repository</li>
+    <li><strong>Q2 2027</strong> – Expand pilot program, introduce subscription plans, collect traction metrics</li>
+    <li><strong>Q3–Q4 2027</strong> – Begin structured matching, explore protected deal workflows with legal and compliance review</li>
+  </ul>
+
+  <!-- ЗАПРОС (THE ASK) -->
+  <h2>What we are looking for</h2>
+  <ul>
+    <li><strong>Grant support</strong> – from NEAR Foundation, Algorand Foundation, or similar programs</li>
+    <li><strong>Accelerator programs</strong> – such as NEAR Horizon, Algorand’s accelerator, or other ConTech-focused initiatives</li>
+    <li><strong>Pilot partners</strong> – contractors, engineering firms, and customers for real‑world validation</li>
+    <li><strong>Technical mentorship</strong> – in SaaS, ConTech, document workflow, and secure infrastructure</li>
+  </ul>
+
+  <!-- КОНТАКТЫ -->
+  <h2 id="contact">Contact</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem;">
+    <div>
+      <strong style="color:#fff;">Vitaliy Tolkov</strong><br />
+      <span style="color:#94a3b8;">Founder</span><br />
+      <a href="mailto:vitalijtolkov487@gmail.com" style="color:#facc15;">vitalijtolkov487@gmail.com</a>
+    </div>
+    <div>
+      <strong style="color:#fff;">Nikita Tolkov</strong><br />
+      <span style="color:#94a3b8;">Developer</span><br />
+      <a href="mailto:ntolkov06@gmail.com" style="color:#facc15;">ntolkov06@gmail.com</a>
+    </div>
+    <div>
+      <strong style="color:#fff;">Links</strong><br />
+      <a href="https://pro-object-workflow.vercel.app/" target="_blank" style="color:#facc15;">Public page (old)</a><br />
+      <a href="https://vk.com/inzhiniring_proobekt" target="_blank" style="color:#facc15;">VK</a><br />
+      <a href="https://max.ru/channel_inzhiniring_proobekt" target="_blank" style="color:#facc15;">MAX</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>&copy; 2026 PROobject</span>
+    <span>
+      <a href="#top">↑ Back to top</a>
+    </span>
+  </div>
+
+</div>
+
+</body>
+</html>
